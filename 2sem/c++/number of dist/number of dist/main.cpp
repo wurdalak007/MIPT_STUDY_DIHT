@@ -5,24 +5,21 @@
 using namespace std;
 
 class Graph {
-    
 public:
-    
     Graph( int size );
-    ~Graph();
+    ~Graph() = default;
     void AddEdge( int from, int to );
     int BFS( int start, int end );
-    
 private:
-    
-    vector< vector<int> > graph;
+    struct Vertex {
+        int depth = 0;
+        int num_of_dist = 0;
+    };
+    vector<vector<int>> graph;
 };
 
 Graph::Graph( int size ) {
     graph.resize(size);
-}
-
-Graph::~Graph() {
 }
 
 void Graph::AddEdge( int from, int to ) {
@@ -30,36 +27,29 @@ void Graph::AddEdge( int from, int to ) {
     graph[to].push_back(from);
 }
 
-int Graph::BFS( int start, int end ) {
-    int size = (int)graph.size();
-    int dist = 0;
+int Graph::BFS( int from, int to ) {
+    vector<Vertex> sequence(graph.size());
     
     queue<int> q;
-    vector<bool> used (size);
-    vector<int> d (size), p (size);
+    q.push(from);
+    sequence[from].num_of_dist = 1;
     
-    q.push (start);
-    used[start] = true;
-    p[start] = -1;
-    
-    while( !q.empty() ) {
+    while( !q.empty() ){
         int v = q.front();
         q.pop();
-        for( int i = 0; i < graph[v].size(); ++i ) {
-            int to = graph[v][i];
-            if( !used[to] ) {
-                used[to] = true;
-                q.push (to);
-                d[to] = d[v] + 1;
-                p[to] = v;
+        
+        for( int i : graph[v] ) {
+            if( sequence[i].num_of_dist == 0 ) {
+                q.push(i);
+                sequence[i].depth = sequence[v].depth + 1;
+                sequence[i].num_of_dist = sequence[v].num_of_dist;
             }
-            if( to == end ) {
-                dist++;
+            else if( sequence[i].depth == sequence[v].depth + 1 ) {
+                sequence[i].num_of_dist += sequence[v].num_of_dist;
             }
-            
         }
     }
-    return dist;
+    return sequence[to].num_of_dist;
 }
 
 int main() {

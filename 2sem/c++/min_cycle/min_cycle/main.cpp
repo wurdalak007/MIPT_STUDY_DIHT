@@ -1,52 +1,49 @@
-//
-//  main.cpp
-//  min_cycle
-//
-//  Created by Матвей on 12.02.2018.
-//  Copyright © 2018 Матвей. All rights reserved.
-//
+/*Дан невзвешенный неориентированный граф. Найдите цикл минимальной длины. Требуемая сложность O(VE), + 1 балл за O(V + E).*/
 
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <queue>
 using namespace std;
 
 class Graph {
 public:
     Graph( int n );
-    ~Graph() {}
+    ~Graph() = default;
     void AddEdge( int from, int to );
     int FindCycle();
-    bool DFS( int vertex );
-    void ClearStack();
+    int BFS( int start );
 private:
     vector< vector<int> > graph;
-    vector<char> colour;
-    stack<int> cycle;
 };
 
-Graph::Graph( int n ): graph(n), colour(n,0) {}
+Graph::Graph( int n ): graph(n) {}
 
-void Graph::ClearStack() {
-    while (!colour.empty()) {
-        colour.pop_back();
-    }
-}
-
-bool Graph::DFS( int vertex ) {
-    colour[vertex] = 1;
-    for( int i = 0; i < graph[vertex].size(); ++i) {
-        int to = graph[vertex][i];
-        if (colour[to] == 0) {
-            cycle.push(to);
-            if (DFS (to))  return true;
+int Graph::BFS( int start ){
+    queue<int> q;
+    vector<bool> used( graph.size(), false );
+    vector<int> parents(graph.size());
+    vector<int> cycle_size(graph.size(), 0);
+    
+    q.push(start);
+    used[start] = true;
+    
+    while( !q.empty() ) {
+        int current_vert = q.front();
+        q.pop();
+        for( int i : graph[current_vert] ) {
+            if( !used[i] ) {
+                q.push(i);
+                parents[i] = current_vert;
+                cycle_size[i] = cycle_size[current_vert] + 1;
+                used[i] = true;
+            } else if( i!= parents[current_vert] ) {
+                return cycle_size[i] + cycle_size[current_vert] + 1;
+            }
         }
-        else if (colour[to] == 1) {
-            return true;
-        }
+        
     }
-    colour[vertex] = 2;
-    return false;
+    return 10001;
 }
 
 void Graph::AddEdge( int from, int to ) {
@@ -55,10 +52,19 @@ void Graph::AddEdge( int from, int to ) {
 }
 
 int Graph::FindCycle() {
-    int min_cycle = 0;
+    int tmp_cycle = 0;
+    int min_cycle = 10001;
+    
     for( int i = 0; i < graph.size(); i++ ) {
-        ClearStack();
-        if( DFS(i) )
+        tmp_cycle = BFS(i);
+        if( tmp_cycle < min_cycle ) {
+            min_cycle = tmp_cycle;
+        }
+    }
+    if( min_cycle != 10001 ) {
+        return min_cycle;
+    } else {
+        return -1;
     }
 }
 
@@ -75,7 +81,6 @@ int main() {
         cin >> from >> to;
         graph.AddEdge(from, to);
     }
-    
-    
+    cout << graph.FindCycle();
     return 0;
 }
