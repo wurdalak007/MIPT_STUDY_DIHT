@@ -2,9 +2,10 @@
 
 #include <iostream>
 #include <vector>
-#include <stack>
 #include <queue>
 using namespace std;
+
+const int max_cycle = 10001;
 
 class Graph {
 public:
@@ -43,7 +44,7 @@ int Graph::BFS( int start ){
         }
         
     }
-    return 10001;
+    return max_cycle;
 }
 
 void Graph::AddEdge( int from, int to ) {
@@ -53,7 +54,7 @@ void Graph::AddEdge( int from, int to ) {
 
 int Graph::FindCycle() {
     int tmp_cycle = 0;
-    int min_cycle = 10001;
+    int min_cycle = max_cycle;
     
     for( int i = 0; i < graph.size(); i++ ) {
         tmp_cycle = BFS(i);
@@ -61,7 +62,7 @@ int Graph::FindCycle() {
             min_cycle = tmp_cycle;
         }
     }
-    if( min_cycle != 10001 ) {
+    if( min_cycle != max_cycle ) {
         return min_cycle;
     } else {
         return -1;
