@@ -22,8 +22,3 @@ while end == False:
         end = True
 print("Decode_data: ", end=" ")
 print('\n'.join(decoded_data))
-
-
-
-
-
