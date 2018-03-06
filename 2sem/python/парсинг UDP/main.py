@@ -29,8 +29,3 @@ while end == False:
 
 print("Decode_data: ", end=" ")
 print('\n'.join(decoded_data))
-
-
-
-
-
