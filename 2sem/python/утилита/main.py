@@ -4,7 +4,6 @@
 #PS:
 #Согласно документации wc : A line is deﬁned as a string of characters delimited by a <newline> character. A word is deﬁned as a string of characters delimited by white space characters.
 #Шаблонизатор контеста не отображает последний перенос строки, хотя в тестах он есть. Не потеряйте его.
-
 file = open("input.txt", "r")
 
 num_of_str = 0
