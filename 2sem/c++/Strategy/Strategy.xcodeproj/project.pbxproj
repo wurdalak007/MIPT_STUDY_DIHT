@@ -17,7 +17,8 @@
 		BA4E592B204F1E7200424745 /* Zombie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E5929204F1E7200424745 /* Zombie.cpp */; };
 		BA4E592E204F1ED500424745 /* Necromancer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E592C204F1ED500424745 /* Necromancer.cpp */; };
 		BA4E5931204F1F2F00424745 /* Vampire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E592F204F1F2F00424745 /* Vampire.cpp */; };
-		BA4E5934204F214B00424745 /* UnitBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E5932204F214B00424745 /* UnitBuilder.cpp */; };
+		BA4E595D2050640300424745 /* Undead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E595B2050640300424745 /* Undead.cpp */; };
+		BA4E5960205064E800424745 /* Humans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E595E205064E800424745 /* Humans.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,8 +54,10 @@
 		BA4E592D204F1ED500424745 /* Necromancer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Necromancer.h; sourceTree = "<group>"; };
 		BA4E592F204F1F2F00424745 /* Vampire.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vampire.cpp; sourceTree = "<group>"; };
 		BA4E5930204F1F2F00424745 /* Vampire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vampire.h; sourceTree = "<group>"; };
-		BA4E5932204F214B00424745 /* UnitBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UnitBuilder.cpp; sourceTree = "<group>"; };
-		BA4E5933204F214B00424745 /* UnitBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitBuilder.h; sourceTree = "<group>"; };
+		BA4E595B2050640300424745 /* Undead.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Undead.cpp; sourceTree = "<group>"; };
+		BA4E595C2050640300424745 /* Undead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Undead.h; sourceTree = "<group>"; };
+		BA4E595E205064E800424745 /* Humans.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Humans.cpp; sourceTree = "<group>"; };
+		BA4E595F205064E800424745 /* Humans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Humans.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +74,10 @@
 		BA4E5904204F134D00424745 = {
 			isa = PBXGroup;
 			children = (
-				BA4E5932204F214B00424745 /* UnitBuilder.cpp */,
-				BA4E5933204F214B00424745 /* UnitBuilder.h */,
+				BA4E595E205064E800424745 /* Humans.cpp */,
+				BA4E595F205064E800424745 /* Humans.h */,
+				BA4E595B2050640300424745 /* Undead.cpp */,
+				BA4E595C2050640300424745 /* Undead.h */,
 				BA4E592F204F1F2F00424745 /* Vampire.cpp */,
 				BA4E5930204F1F2F00424745 /* Vampire.h */,
 				BA4E592C204F1ED500424745 /* Necromancer.cpp */,
@@ -173,13 +178,14 @@
 				BA4E592B204F1E7200424745 /* Zombie.cpp in Sources */,
 				BA4E591F204F14F000424745 /* Archer.cpp in Sources */,
 				BA4E5925204F15F100424745 /* Knight.cpp in Sources */,
+				BA4E595D2050640300424745 /* Undead.cpp in Sources */,
 				BA4E5931204F1F2F00424745 /* Vampire.cpp in Sources */,
 				BA4E5928204F1DDB00424745 /* Skeleton.cpp in Sources */,
 				BA4E5911204F134D00424745 /* main.cpp in Sources */,
 				BA4E591C204F13EF00424745 /* Peasant.cpp in Sources */,
-				BA4E5934204F214B00424745 /* UnitBuilder.cpp in Sources */,
 				BA4E592E204F1ED500424745 /* Necromancer.cpp in Sources */,
 				BA4E5919204F136400424745 /* IUnit.cpp in Sources */,
+				BA4E5960205064E800424745 /* Humans.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

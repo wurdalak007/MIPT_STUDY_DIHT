@@ -4,3 +4,5 @@
 void Peasant::Who_are_you() const {
     std::cout << "Hey, I'm a peasant" << std::endl;
 }
+
+Peasant::Peasant() : defence(50), attack(5) {}

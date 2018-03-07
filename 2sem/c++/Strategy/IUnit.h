@@ -11,5 +11,4 @@ class IUnit{
 public:
     virtual void Who_are_you() const = 0;
 private:
-    
 };

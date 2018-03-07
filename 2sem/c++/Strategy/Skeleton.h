@@ -3,6 +3,9 @@
 
 class Skeleton : public IUnit {
 public:
+    Skeleton();
     virtual void Who_are_you() const override;
 private:
+    int defence;
+    int attack;
 };
