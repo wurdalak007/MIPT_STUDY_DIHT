@@ -19,6 +19,8 @@
 		BA4E5931204F1F2F00424745 /* Vampire.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E592F204F1F2F00424745 /* Vampire.cpp */; };
 		BA4E595D2050640300424745 /* Undead.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E595B2050640300424745 /* Undead.cpp */; };
 		BA4E5960205064E800424745 /* Humans.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4E595E205064E800424745 /* Humans.cpp */; };
+		BAF4218B205315B000325B7D /* HumanCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAF42189205315B000325B7D /* HumanCreator.cpp */; };
+		BAF4218E2053173A00325B7D /* UndeadCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAF4218C2053173A00325B7D /* UndeadCreator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +60,10 @@
 		BA4E595C2050640300424745 /* Undead.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Undead.h; sourceTree = "<group>"; };
 		BA4E595E205064E800424745 /* Humans.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Humans.cpp; sourceTree = "<group>"; };
 		BA4E595F205064E800424745 /* Humans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Humans.h; sourceTree = "<group>"; };
+		BAF42189205315B000325B7D /* HumanCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HumanCreator.cpp; sourceTree = "<group>"; };
+		BAF4218A205315B000325B7D /* HumanCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HumanCreator.h; sourceTree = "<group>"; };
+		BAF4218C2053173A00325B7D /* UndeadCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UndeadCreator.cpp; sourceTree = "<group>"; };
+		BAF4218D2053173A00325B7D /* UndeadCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UndeadCreator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 		BA4E5904204F134D00424745 = {
 			isa = PBXGroup;
 			children = (
+				BAF4218C2053173A00325B7D /* UndeadCreator.cpp */,
+				BAF4218D2053173A00325B7D /* UndeadCreator.h */,
+				BAF42189205315B000325B7D /* HumanCreator.cpp */,
+				BAF4218A205315B000325B7D /* HumanCreator.h */,
 				BA4E595E205064E800424745 /* Humans.cpp */,
 				BA4E595F205064E800424745 /* Humans.h */,
 				BA4E595B2050640300424745 /* Undead.cpp */,
@@ -178,6 +188,7 @@
 				BA4E592B204F1E7200424745 /* Zombie.cpp in Sources */,
 				BA4E591F204F14F000424745 /* Archer.cpp in Sources */,
 				BA4E5925204F15F100424745 /* Knight.cpp in Sources */,
+				BAF4218B205315B000325B7D /* HumanCreator.cpp in Sources */,
 				BA4E595D2050640300424745 /* Undead.cpp in Sources */,
 				BA4E5931204F1F2F00424745 /* Vampire.cpp in Sources */,
 				BA4E5928204F1DDB00424745 /* Skeleton.cpp in Sources */,
@@ -186,6 +197,7 @@
 				BA4E592E204F1ED500424745 /* Necromancer.cpp in Sources */,
 				BA4E5919204F136400424745 /* IUnit.cpp in Sources */,
 				BA4E5960205064E800424745 /* Humans.cpp in Sources */,
+				BAF4218E2053173A00325B7D /* UndeadCreator.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
