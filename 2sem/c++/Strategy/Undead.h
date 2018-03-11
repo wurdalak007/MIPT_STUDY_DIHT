@@ -14,10 +14,10 @@ public:
     ~Undead() = default;
     void Create( string name );
 private:
-    vector<Vampire*> vampires;
-    vector<Zombie*> zombies;
-    vector<Skeleton*> skeletons;
-    vector<Necromancer*> necromancers;
+    vector<shared_ptr<Vampire>> vampires;
+    vector<shared_ptr<Zombie>> zombies;
+    vector<shared_ptr<Skeleton>> skeletons;
+    vector<shared_ptr<Necromancer>> necromancers;
 
     int Cash;
     int NumOfVampires;

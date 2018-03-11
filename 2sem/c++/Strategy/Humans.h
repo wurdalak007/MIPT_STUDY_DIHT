@@ -15,10 +15,10 @@ public:
     void Create(string name);
 private:
     int Cash;
-    vector<Peasant*> peasants;
-    vector<Knight*> knights;
-    vector<Archer*> archers;
-    vector<Swordsman*> swordsmen;
+    vector<shared_ptr<Peasant>> peasants;
+    vector<shared_ptr<Knight>> knights;
+    vector<shared_ptr<Archer>> archers;
+    vector<shared_ptr<Swordsman>> swordsmen;
     int NumOfPeasants;
     int NumOfKnights;
     int NumOfSwordsmans;

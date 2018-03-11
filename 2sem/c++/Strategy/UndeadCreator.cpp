@@ -5,22 +5,22 @@
 #include "Zombie.h"
 #include "Skeleton.h"
 
-Vampire* UndeadCreator::CreateVampire() {
-    Vampire* my_vampire = new Vampire;
+shared_ptr<Vampire> UndeadCreator::CreateVampire() {
+    shared_ptr<Vampire> my_vampire;
     return my_vampire;
 }
 
-Zombie* UndeadCreator::CreateZombie() {
-    Zombie* my_zombie = new Zombie;
+shared_ptr<Zombie> UndeadCreator::CreateZombie() {
+    shared_ptr<Zombie> my_zombie;
     return my_zombie;
 }
 
-Necromancer* UndeadCreator::CreateNecromancer() {
-    Necromancer* my_necromancer = new Necromancer;
+shared_ptr<Necromancer> UndeadCreator::CreateNecromancer() {
+    shared_ptr<Necromancer> my_necromancer;
     return my_necromancer;
 }
 
-Skeleton* UndeadCreator::CreateSkeleton() {
-    Skeleton* my_skeleton = new Skeleton;
+shared_ptr<Skeleton> UndeadCreator::CreateSkeleton() {
+    shared_ptr<Skeleton> my_skeleton;
     return my_skeleton;
 }

@@ -5,5 +5,5 @@ void Archer::Who_are_you() const {
     std::cout << "Hey, I'm an archer" << std::endl;
 }
 
-Archer::Archer() : defence(100), attack(20) {}
+Archer::Archer(){}
 

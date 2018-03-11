@@ -5,23 +5,23 @@
 #include "Swordsman.h"
 #include "Knight.h"
 
-Peasant* HumanCreator::CreatePeasant() {
-    Peasant* my_peasant = new Peasant;
+shared_ptr<Peasant> HumanCreator::CreatePeasant() {
+    shared_ptr<Peasant> my_peasant;
     return my_peasant;
 }
 
-Archer* HumanCreator::CreateArcher() {
-    Archer* my_archer = new Archer;
+shared_ptr<Archer> HumanCreator::CreateArcher() {
+    shared_ptr<Archer> my_archer;
     return my_archer;
 }
 
-Swordsman* HumanCreator::CreateSwordsman() {
-    Swordsman* my_swordsman = new Swordsman;
+shared_ptr<Swordsman> HumanCreator::CreateSwordsman() {
+    shared_ptr<Swordsman> my_swordsman;
     return my_swordsman;
 }
 
-Knight* HumanCreator::CreateKnight() {
-    Knight* my_knight = new Knight;
+shared_ptr<Knight> HumanCreator::CreateKnight() {
+    shared_ptr<Knight> my_knight;
     return my_knight;
 }
 

@@ -11,10 +11,10 @@ class HumanCreator {
 public:
     HumanCreator(){};
     ~HumanCreator() = default;
-    Peasant* CreatePeasant();
-    Archer* CreateArcher();
-    Swordsman* CreateSwordsman();
-    Knight* CreateKnight();
+    shared_ptr<Peasant> CreatePeasant();
+    shared_ptr<Archer> CreateArcher();
+    shared_ptr<Swordsman> CreateSwordsman();
+    shared_ptr<Knight> CreateKnight();
 private:
 };
 

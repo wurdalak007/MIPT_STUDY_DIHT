@@ -11,10 +11,10 @@ class UndeadCreator {
 public:
     UndeadCreator(){};
     ~UndeadCreator() = default;
-    Vampire* CreateVampire();
-    Necromancer* CreateNecromancer();
-    Zombie* CreateZombie();
-    Skeleton* CreateSkeleton();
+    shared_ptr<Vampire> CreateVampire();
+    shared_ptr<Necromancer> CreateNecromancer();
+    shared_ptr<Zombie> CreateZombie();
+    shared_ptr<Skeleton> CreateSkeleton();
 private:
     
 };

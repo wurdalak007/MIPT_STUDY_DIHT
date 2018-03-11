@@ -6,6 +6,4 @@ public:
     Vampire();
     virtual void Who_are_you() const override;
 private:
-    int defence;
-    int attack;
 };
