@@ -9,7 +9,7 @@ using namespace std;
 
 class HumanCreator {
 public:
-    HumanCreator(){};
+    HumanCreator();
     ~HumanCreator() = default;
     shared_ptr<Peasant> CreatePeasant();
     shared_ptr<Archer> CreateArcher();

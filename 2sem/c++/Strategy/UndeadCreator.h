@@ -9,7 +9,7 @@ using namespace std;
 
 class UndeadCreator {
 public:
-    UndeadCreator(){};
+    UndeadCreator();
     ~UndeadCreator() = default;
     shared_ptr<Vampire> CreateVampire();
     shared_ptr<Necromancer> CreateNecromancer();

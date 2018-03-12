@@ -4,9 +4,10 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
 
 using namespace std;
-const int inf = 100000000;
+const int inf = 1000000000;
 
 class Graph {
 public:
@@ -22,37 +23,38 @@ private:
 int Graph::Dijkstra( int start, int end ) {
     int n = (int)graph.size();
     vector<int> d(n, inf);
+    set<pair<int, int>> q;
     vector<bool> used(n);
+    q.insert(make_pair(0, start));
     d[start] = 0;
     
-    for( int i = 0; i < n; i++ ) {
-        int v = -1;
+    while( !q.empty() ) {
+        pair<int,int> v = *(q.begin());
+        q.erase(q.begin());
+//        if( v.first == inf ) {
+//            break;
+//        }
+        used[v.second] = true;
         
-        for( int j = 0; j < n; j++ ) {
-            if( !used[j] && (v == -1 || d[j] < d[v]) ) {
-                v = j;
-            }
-        }
-        
-        if( d[v] == inf )
-            break;
-        used[v] = true;
-        
-        for( int j = 0; j < graph[v].size(); j++ ) {
-            int to = graph[v][j].first;
-            int len = graph[v][j].second;
+        for( int j = 0; j < graph[v.second].size(); j++ ) {
+            pair<int,int> to = graph[v.second][j];
             
-            if( d[v] + len < d[to] ) {
-                d[to] = d[v] + len;
+            if( !used[to.second] ) {
+                if( v.first + to.first  < d[to.second] ) {
+                    d[to.second] = v.first + to.first;
+                    to.first = d[to.second];
+                }
+                q.insert(to);
             }
+            
         }
     }
     return d[end];
 }
 
 void Graph::AddEdge( int from, int to, int weight ) {
-    graph[from].push_back(make_pair(to, weight));
-    graph[to].push_back(make_pair(from, weight));
+    graph[from].push_back(make_pair(weight, to));
+    graph[to].push_back(make_pair(weight, from));
 }
 
 Graph::Graph( int n ) : graph(n, vector<pair<int, int>>(0)) {}
@@ -74,3 +76,4 @@ int main() {
     
     return 0;
 }
+
