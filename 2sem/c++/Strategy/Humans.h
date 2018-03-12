@@ -12,7 +12,7 @@ class Humans {
 public:
     Humans();
     ~Humans() = default;
-    void Create(string name);
+    bool Create(string name);
 private:
     int Cash;
     vector<shared_ptr<Peasant>> peasants;

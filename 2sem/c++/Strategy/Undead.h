@@ -12,7 +12,7 @@ class Undead {
 public:
     Undead();
     ~Undead() = default;
-    void Create( string name );
+    bool Create( string name );
 private:
     vector<shared_ptr<Vampire>> vampires;
     vector<shared_ptr<Zombie>> zombies;

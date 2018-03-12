@@ -31,13 +31,11 @@ int Graph::Dijkstra( int start, int end ) {
     while( !q.empty() ) {
         pair<int,int> v = *(q.begin());
         q.erase(q.begin());
-//        if( v.first == inf ) {
-//            break;
-//        }
         used[v.second] = true;
         
         for( int j = 0; j < graph[v.second].size(); j++ ) {
             pair<int,int> to = graph[v.second][j];
+            
             
             if( !used[to.second] ) {
                 if( v.first + to.first  < d[to.second] ) {
