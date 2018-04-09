@@ -11,8 +11,7 @@ const int inf = 1000000000;
 
 class Graph {
 public:
-    Graph( int n );
-    ~Graph() = default;
+    explicit Graph( int n );
     void AddEdge( int from, int to, int weight );
     int Dijkstra( int start, int end );
     
@@ -24,27 +23,22 @@ int Graph::Dijkstra( int start, int end ) {
     int n = (int)graph.size();
     vector<int> d(n, inf);
     set<pair<int, int>> q;
-    vector<bool> used(n);
     q.insert(make_pair(0, start));
     d[start] = 0;
     
     while( !q.empty() ) {
         pair<int,int> v = *(q.begin());
         q.erase(q.begin());
-        used[v.second] = true;
+        
+        if (v.first > d[v.second]) continue;
         
         for( int j = 0; j < graph[v.second].size(); j++ ) {
             pair<int,int> to = graph[v.second][j];
-            
-            
-            if( !used[to.second] ) {
-                if( v.first + to.first  < d[to.second] ) {
-                    d[to.second] = v.first + to.first;
+                if( d[v.second] + to.first  < d[to.second] ) {
+                    d[to.second] = d[v.second] + to.first;
                     to.first = d[to.second];
+                    q.insert(to);
                 }
-                q.insert(to);
-            }
-            
         }
     }
     return d[end];
@@ -55,8 +49,8 @@ void Graph::AddEdge( int from, int to, int weight ) {
     graph[to].push_back(make_pair(weight, from));
 }
 
-Graph::Graph( int n ) : graph(n, vector<pair<int, int>>(0)) {}
-
+Graph::Graph( int n ) : graph(n, vector<pair<int, int>>(0))
+{}
 
 int main() {
     int n = 0;
