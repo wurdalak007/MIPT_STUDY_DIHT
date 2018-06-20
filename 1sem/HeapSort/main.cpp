@@ -1,4 +1,4 @@
-// to track commit 
+// Heap sort algorithm
 #include <iostream>
 #include <random>
 using namespace std;
