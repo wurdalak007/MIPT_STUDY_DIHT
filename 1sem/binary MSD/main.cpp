@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  binary MSD
-//
-//  Created by Матвей on 21.10.17.
-//  Copyright © 2017 Матвей. All rights reserved.
-//
-
 /*Дан массив неотрицательных целых 64-разрядных чисел. Количество чисел не больше 1000000. Отсортировать массив методом MSD по битам (бинарный QuickSort).*/
 #include <iostream>
 #include <vector>
