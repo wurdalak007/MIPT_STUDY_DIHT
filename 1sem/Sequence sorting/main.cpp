@@ -35,7 +35,7 @@ void QSort( vector<int> &arr, int high, int low )
     QSort( arr, part - 1, low );
 }
 
-void Merch( vector<int> &First, vector<int> &Second, int k ) {
+void Merge( vector<int> &First, vector<int> &Second, int k ) {
     int i = 0;
     int j = 0;
     vector<int> SortArr(k*2);
@@ -73,7 +73,7 @@ void Solve( vector<int> &First, vector<int> &Second, int k ) {
     int size = Second.size();
     QSort( First, k-1, 0 );
     QSort( Second, size - 1, 0 );
-    Merch( First, Second, k );
+    Merge( First, Second, k );
 }
 
 int main() {
